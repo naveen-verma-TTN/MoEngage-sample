@@ -14,25 +14,25 @@ import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
 
-    companion object{
+    companion object {
         private val TAG: String = MainActivity::class.java.simpleName
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
 
-    private fun fetchAdvertisingId(){
-        val idInfo: AdvertisingIdClient.Info? = null
-         CoroutineScope(Dispatchers.IO).launch {
+    private fun fetchAdvertisingId() {
+        CoroutineScope(Dispatchers.IO).launch {
             val result = async {
                 return@async AdvertisingIdClient.getAdvertisingIdInfo(this@MainActivity)
             }.await()
 
-             // adding GoogleAdd-Id (Unique-id)
-             val googleAddId = result.id
-             Log.i(TAG, "fetchAdvertisingId: $googleAddId")
-             MoEHelper.getInstance(applicationContext).setUniqueId(googleAddId)
+            // adding GoogleAdd-Id (Unique-id)
+            val googleAddId = result.id
+            Log.i(TAG, "fetchAdvertisingId: $googleAddId")
+            MoEHelper.getInstance(applicationContext).setUniqueId(googleAddId)
         }
 
     }
@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
 
         makeToast(this, "Login successfully")
     }
+
     fun logoutTrack(view: View) {
         MoEHelper.getInstance(applicationContext).logoutUser()
 

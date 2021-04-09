@@ -15,13 +15,14 @@ import java.util.*
  * naveen.verma@tothenew.com
  */
 
-class App: Application() {
+class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
 
         val moEngage: MoEngage = MoEngage.Builder(
-            this, getString(R.string.mongege_key))
+            this, getString(R.string.mongege_key)
+        )
             .configureLogs(LogConfig(LogLevel.VERBOSE, true))
             .build()
         MoEngage.initialise(moEngage)
