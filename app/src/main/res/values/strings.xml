@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">moengage_sample</string>
+    <string name="mongege_key">6NLGZEOE9R77FWS0ZZV8ML2O</string>
+    <string name="login">LogIn</string>
+    <string name="log_out">Log Out</string>
+    <string name="click_on_logout_to_track_log_out_event">Click on logout to track log out event</string>
+    <string name="track_event">Track event</string>
+    <string name="click_on_login_to_track_login_event">Click on login to track login event</string>
+    <string name="click_on_the_button_to_track_user_details_events">Click on the button to track User-details events</string>
+</resources>
